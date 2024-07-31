@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-""" A basic flask app
+"""A Basic Flask app.
 """
-
 from flask_babel import Babel
 from flask import Flask, render_template, request
 
@@ -19,11 +18,13 @@ app.config.from_object(Config)
 app.url_map.strict_slashes = False
 babel = Babel(app)
 
+
 @babel.localeselector
 def get_locale() -> str:
-    """retrieves the locale for a web page.
+    """Retrieves the locale for a web page.
     """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
+
 
 @app.route('/')
 def get_index() -> str:
