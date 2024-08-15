@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-
+"""Hypermedia pagination sample.
+"""
 import csv
 import math
 from typing import Dict, List, Tuple
 
 
-def index_page(page, page_size) -> Tuple:
-    start = (page - 1) *page_size
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """print out the page index
+    """
+    start = (page - 1 ) *page_size
     end = start + page_size
-    return(start, end)
+    return (start, end)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
