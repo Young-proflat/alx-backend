@@ -2,10 +2,11 @@
 
 import csv
 import math
-from typing import Dict
+from typing import Dict, List, Tuple
 
-def index_page(page, page_size) ->  tuple:
-    start = (page - 1) * page_size
+
+def index_page(page, page_size) -> Tuple:
+    start = (page - 1) *page_size
     end = start + page_size
     return(start, end)
 
