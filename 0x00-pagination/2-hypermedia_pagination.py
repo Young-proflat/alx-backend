@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
-"""Hypermedia pagination sample
-"""
+
 import csv
 import math
-from typing import Dict, List, Tuple
+from typing import Dict
 
-
-def index_range(page: int, page_size: int) -> Tuple:
-    """Retrive the index range from a given page and page size
-    """
+def index_page(page, page_size) ->  tuple:
     start = (page - 1) * page_size
     end = start + page_size
-    return (start, end)
+    return(start, end)
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -60,4 +56,3 @@ class Server:
             'total_pages': total_pages,
         }
         return page_info
-
